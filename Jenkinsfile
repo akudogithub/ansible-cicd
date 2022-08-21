@@ -1,5 +1,9 @@
 pipeline {
-    agent host01
+    agent {
+      label {
+        label 'host03'
+      }
+    }
     
     tools
     {
