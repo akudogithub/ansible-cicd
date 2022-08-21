@@ -33,14 +33,12 @@ pipeline {
       
          stage('Execute Maven') {
            steps {
-             
-                sh 'mvn package'             
+              sh 'mvn package'             
           }
         }
  
         stage('Ansible Deploy') {
-             
-            steps {
+          steps {
                sh "ansible-playbook etechnginx.yaml -i inventories/dev/hosts --user jenkins "     
             }
         }
